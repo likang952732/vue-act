@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="returnProcess" isExecutable="true">
+    <startEvent id="start"></startEvent>
+    <sequenceFlow id="startToTask1" name="startToTask1" sourceRef="start" targetRef="task1"></sequenceFlow>
+    <userTask id="task1" name="task1"></userTask>
+    <sequenceFlow id="task1ToTask2" name="task1ToTask2" sourceRef="task1" targetRef="task2"></sequenceFlow>
+    <userTask id="task2" name="task2"></userTask>
+    <sequenceFlow id="task2ToTask3" name="task2ToTask3" sourceRef="task2" targetRef="task3"></sequenceFlow>
+    <userTask id="task3" name="task3"></userTask>
+    <sequenceFlow id="task3ToEnd" name="task3ToEnd" sourceRef="task3" targetRef="end"></sequenceFlow>
+    <endEvent id="end"></endEvent>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_returnProcess">
+    <bpmndi:BPMNPlane bpmnElement="returnProcess" id="BPMNPlane_returnProcess"></bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
