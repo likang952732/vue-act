@@ -1,6 +1,7 @@
 <template>
   <el-table :data="tableData" style="width: 100%">
     <el-table-column fixed prop="batch_id" label="主键"> </el-table-column>
+    <el-table-column fixed prop="processstate" label="状态"> </el-table-column>
     <el-table-column prop="buskey" label="批次号"> </el-table-column>
     <el-table-column prop="createtime" label="时间"> </el-table-column>
     <el-table-column fixed="right" label="操作" width="100">

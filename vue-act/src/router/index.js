@@ -29,7 +29,12 @@ const routes = [
         path: 'Query',
         name: 'Query',
         component: () => import(`@/views/activiti/query/Query`)
-      }
+      },
+      {
+        path: 'QueryDetail',
+        name: 'QueryDetail',
+        component: () => import(`@/views/activiti/query/detail/Detail`)
+      },
     ]
   }
 ];

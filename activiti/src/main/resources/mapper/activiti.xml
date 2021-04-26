@@ -9,7 +9,7 @@
     </insert>
 
     <select id="queryBatch"  resultType="java.util.Map"  >
-        select batch_id,buskey,DATE_FORMAT(createtime,'%Y-%m-%d %H:%i:%s') as createtime  from batch order by createtime desc
+        select batch_id,processstate,buskey,DATE_FORMAT(createtime,'%Y-%m-%d %H:%i:%s') as createtime  from batch order by createtime desc
     </select>
 
 </mapper>

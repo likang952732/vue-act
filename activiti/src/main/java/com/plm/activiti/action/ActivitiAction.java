@@ -125,6 +125,7 @@ public class ActivitiAction {
         Map<Object, Object> dataMap = new HashMap<>();
         String busKey = data.get("busKey") != null ? String.valueOf(data.get("busKey")) : "";
         Integer approveState = data.get("approveState") != null ? Integer.valueOf(data.get("approveState").toString()) : -1;
+        String approveReason = data.get("approveReason") != null ? String.valueOf(data.get("approveReason")) : "";
         ProcessInstance processInstance = runtimeService.createProcessInstanceQuery()
                 .processInstanceBusinessKey(busKey).singleResult();
         List<org.activiti.engine.task.Task> list = taskService.createTaskQuery().list();
@@ -135,6 +136,9 @@ public class ActivitiAction {
                 break;
             }
         }
+        //Map val = new HashMap<>();
+        //val.put("users","a,b,c");
+        taskService.complete(actTask.getId(),null);
         dataMap.put("id", processInstance.getId());
         return dataMap;
     }
