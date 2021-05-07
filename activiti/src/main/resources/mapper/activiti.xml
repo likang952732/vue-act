@@ -2,14 +2,37 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.plm.activiti.mapper.ActivitiMapper" >
+<mapper namespace="com.plm.activiti.mapper.ActivitiMapper">
+
+    <resultMap id="batchModel" type="com.plm.activiti.model.BatchModel">
+        <result property="batchId" column="batch_id"/>
+        <result property="processState" column="processstate"/>
+        <result property="busKey" column="buskey"/>
+        <result property="createTime" column="createtime"/>
+        <result property="updateTime" column="updatetime"/>
+    </resultMap>
 
     <insert id="addBatch" parameterType="java.util.Map">
-        insert into batch(buskey) values (#{buskey})
+        insert into batch(buskey,processState) values (#{buskey},#{processState})
     </insert>
 
-    <select id="queryBatch"  resultType="java.util.Map"  >
-        select batch_id,processstate,buskey,DATE_FORMAT(createtime,'%Y-%m-%d %H:%i:%s') as createtime  from batch order by createtime desc
+    <select id="queryBatch" resultType="java.util.Map">
+        select batch_id,processstate,buskey,DATE_FORMAT(createtime,'%Y-%m-%d %H:%i:%s') as createtime  from batch
+        where processstate != 'OK'
+        order by createtime desc
     </select>
 
+    <select id="queryAllBatch" resultType="java.util.Map">
+        select batch_id,processstate,buskey,DATE_FORMAT(createtime,'%Y-%m-%d %H:%i:%s') as createtime  from batch
+        order by createtime desc
+    </select>
+
+    <select id="queryBatchDetail" parameterType="java.lang.Integer" resultMap="batchModel">
+        select batch_id,processstate,buskey,DATE_FORMAT(createtime,'%Y-%m-%d %H:%i:%s') as createtime,DATE_FORMAT(updatetime,'%Y-%m-%d %H:%i:%s') as updatetime  from batch
+         where batch_id = #{batchId}
+    </select>
+
+    <update id="updateBatch" parameterType="java.util.Map">
+        update batch set  processstate = #{processState},updatetime = now() where batch_id = #{batchId}
+    </update>
 </mapper>

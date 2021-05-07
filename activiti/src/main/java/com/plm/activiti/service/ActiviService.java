@@ -1,5 +1,6 @@
 package com.plm.activiti.service;
 
+import com.plm.activiti.model.BatchModel;
 import org.activiti.bpmn.model.BpmnModel;
 
 import java.util.List;
@@ -11,4 +12,9 @@ public interface ActiviService {
 
     List<Map> queryBatch();
 
+    List<Map> queryAllBatch();
+
+    BatchModel queryBatchDetail(Integer batchId);
+
+    public void updateBatch(Map map);
 }
