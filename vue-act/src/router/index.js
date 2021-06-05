@@ -6,7 +6,8 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/Act',
+    //path: '/Act',
+    path: '/',
     name: 'Act',
     component: Act,
     children: [
@@ -35,6 +36,11 @@ const routes = [
         name: 'QueryDetail',
         component: () => import(`@/views/activiti/query/detail/Detail`)
       },
+      {
+        path: 'Design',
+        name: 'Design',
+        component: () => import(`@/views/activiti/model/Design`)
+      }
     ]
   }
 ];

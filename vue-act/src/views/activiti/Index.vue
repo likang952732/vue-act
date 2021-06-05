@@ -23,6 +23,10 @@
               <i class="el-icon-menu"></i>
               <span slot="title">已办</span>
             </el-menu-item>
+            <el-menu-item index="4" @click="go('Design')">
+              <i class="el-icon-menu"></i>
+              <span slot="title">模型设计</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-container class="container-main">
