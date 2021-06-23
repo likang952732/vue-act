@@ -13,20 +13,29 @@
           >
             <el-menu-item index="1" @click="go('Bus')">
               <i class="el-icon-s-home"></i>
-              <span slot="title">业务数据</span>
+              <span slot="title">请假开始</span>
             </el-menu-item>
             <el-menu-item index="2" @click="go('Approve')">
               <i class="el-icon-warning"></i>
-              <span slot="title">待办</span>
+              <span slot="title">我发起的流程</span>
             </el-menu-item>
             <el-menu-item index="3" @click="go('Query')">
               <i class="el-icon-menu"></i>
-              <span slot="title">已办</span>
+              <span slot="title">模型列表</span>
             </el-menu-item>
             <el-menu-item index="4" @click="go('Design')">
               <i class="el-icon-menu"></i>
               <span slot="title">模型设计</span>
             </el-menu-item>
+            <el-menu-item index="5" @click="go('ApproveDetail')">
+              <i class="el-icon-menu"></i>
+              <span slot="title">审批任务</span>
+            </el-menu-item>
+            <el-menu-item index="6" @click="go('History')">
+              <i class="el-icon-menu"></i>
+              <span slot="title">审批历史</span>
+            </el-menu-item>
+
           </el-menu>
         </el-aside>
         <el-container class="container-main">

@@ -3,7 +3,7 @@ const context = process.env.VUE_APP_API
 module.exports = {
   devServer: {
     // proxy: "http://192.168.137.1:9090/", //web
-    proxy: "http://localhost:9999/", //web
+    proxy: "http://localhost:80/", //web
     // proxy: "http://192.168.43.236:8089/", //web
     // proxy: "http://192.168.137.1:8089/", //web
     // proxy: "http://192.168.137.1:9091/", //后管

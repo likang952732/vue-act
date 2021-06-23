@@ -14,32 +14,44 @@ const routes = [
       {
         path: 'Bus',
         name: 'Bus',
-        component: () => import(`@/views/activiti/bus/Bus`)
+        component: () => import(`@/views/activiti/bus/Bus`),
+        meta: {keepAlive: false}
       },
       {
         path: 'Approve',
         name: 'Approve',
-        component: () => import(`@/views/activiti/approve/Approve`)
+        component: () => import(`@/views/activiti/approve/Approve`),
+        meta: {keepAlive: false}
       },
       {
         path: 'ApproveDetail',
         name: 'ApproveDetail',
-        component: () => import(`@/views/activiti/approve/detail/Detail`)
+        component: () => import(`@/views/activiti/approve/detail/Detail`),
+        meta: {keepAlive: false}
       },
       {
         path: 'Query',
         name: 'Query',
-        component: () => import(`@/views/activiti/query/Query`)
+        component: () => import(`@/views/activiti/query/Query`),
+        meta: {keepAlive: false}
       },
       {
         path: 'QueryDetail',
         name: 'QueryDetail',
-        component: () => import(`@/views/activiti/query/detail/Detail`)
+        component: () => import(`@/views/activiti/query/detail/Detail`),
+        meta: {keepAlive: false}
       },
       {
         path: 'Design',
         name: 'Design',
-        component: () => import(`@/views/activiti/model/Design`)
+        component: () => import(`@/views/activiti/model/Design`),
+        //meta: {keepAlive: true}
+      },
+      {
+        path: 'History',
+        name: 'History',
+        component: () => import(`@/views/activiti/history/History`),
+        //meta: {keepAlive: true}
       }
     ]
   }
